@@ -70,7 +70,7 @@ def sort_array_with_hash_attributes_by_key(array,key)
 end
 
 def statistic_algorithm_to_sort_people(people)
-  people_sorted = [people.shift]
+  people_sorted = [people[0]]
   people.each do |person|
     people_sorted << person
     people_sorted = sort_array_with_hash_attributes_by_key(people_sorted,"height")
@@ -135,6 +135,7 @@ def logical_algorithm_to_sort_people(people)
 end
 
 def genial_idea(people)
+  final_list = []
   new_list = people.map do |person|
     posibilities = people.select {|other| other[1][:height] > person[1][:height] && other[1][:weight] > person[1][:weight]}
     person = [
@@ -142,6 +143,17 @@ def genial_idea(people)
         height: person[1][:height],
         weight: person[1][:weight],
         posibility: posibilities.size
+      }]
+  end
+  new_list = new_list.map do |person|
+    posibilities = new_list.select {|other| other[1][:height] > person[1][:height] && other[1][:weight] > person[1][:weight]}
+    posibilities << person
+    posibility = posibilities.reduce(0) {|sum, person| sum + person[1][:posibility] }
+    person = [
+      person[0], { 
+        height: person[1][:height],
+        weight: person[1][:weight],
+        posibility: posibility
       }]
   end 
   sorted_list = new_list.sort_by {|person| person[1][:posibility]}
@@ -154,7 +166,7 @@ def genial_idea(people)
       end
     end
   end
-  final_list
+  final_list  
 end
 
 def print_optimal_solution(people_sorted,algorithm)
@@ -164,7 +176,7 @@ def print_optimal_solution(people_sorted,algorithm)
   puts ""
 end
 
-generate_random_inputs_into_txtfile(1000)
+#generate_random_inputs_into_txtfile(1000)
 inputs = load_datas_from_txtfile("inputs.txt")
 list_people = create_list_people_to_study(inputs)
 inter_media_na = get_media_statistic_metric(list_people)
