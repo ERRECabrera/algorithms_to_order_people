@@ -9,8 +9,13 @@ Ordenados de menor a mayor eficiencia.
 	2 - Algoritmo a través del uso de la estadística.
 	    Usamos los datos de altura y peso para crear una variable que determine el grado de proporcionalidad entre ellas. Eso permite evitar a las personas con mayor grado de desproporción y mejorar el rendimiento en el espacio de la lista.
 
-	3 - Algoritmo genial, directo y simple inspirado a través del estudio de los árboles de decisiones.
+	3 - Algoritmo combinatorio inspirado a través del estudio de los árboles de decisiones.
 	    Ordenamos la lista en función del número de otros posibles valores disponibles para ordenar en cada elemento. Si tomo a una persona cualquiera cuantas otras personas son susceptibles de combinarse con ella.
 
-	
+
+Trabajando en refactorizar a dos grandes paradigmas de la programación:
+
+	A. Programación Orientada a Objetos.
+
+	B. Programación Funcional.
 
