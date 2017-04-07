@@ -17,5 +17,5 @@ Trabajando en refactorizar a dos grandes paradigmas de la programación:
 
 	A. Programación Orientada a Objetos.
 
-	B. Programación Funcional.
+	B. Programación Imperativo.
 
